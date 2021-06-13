@@ -1,13 +1,13 @@
-const express = require('express');
-const app = express();
+//const express = require('express');
+//const app = express();
 const websocket = require('ws');
-const parser = require('body-parser')
-const path = require('path')
+//const parser = require('body-parser')
+//const path = require('path')
 const wss = new websocket.Server({
     port: process.env.PORT || "4000"
 })
 const classes = require('./classes');
-const e = require('express');
+//const e = require('express');
 const events = require('events')
 const roomCreater = classes.room;
 var rooms = []
@@ -21,7 +21,7 @@ const customEmmiter = new emmiter;
 
 
 
-app.use("/public", express.static(path.join(__dirname, "client")));
+//app.use("/public", express.static(path.join(__dirname, "client")));
 
 wss.on('connection', (ws) => {
     ws.on('message', (data) => {
@@ -42,9 +42,9 @@ wss.on('connection', (ws) => {
     })
 })
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "index.html"))
-})
+// app.get("/", (req, res) => {
+//     res.sendFile(path.join(__dirname, "client", "index.html"))
+// })
 
 
 
