@@ -6,6 +6,7 @@ const websocket = require('ws');
 const wss = new websocket.Server({
     port: process.env.PORT || "4000"
 })
+const socket = require('socket.io')
 const classes = require('./classes');
 //const e = require('express');
 const events = require('events')
