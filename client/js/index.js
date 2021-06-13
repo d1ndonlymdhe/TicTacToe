@@ -1,7 +1,7 @@
 //const { room } = require("../../classes");
 
 //const { room } = require("../../classes");
-const ws = new WebSocket("https://arcane-oasis-56554.herokuapp.com/")
+const ws = new WebSocket("ws://arcane-oasis-56554.herokuapp.com/")
 var createButton = document.getElementById("createRoom");
 var joinButton = document.getElementById("join")
 var turn;
