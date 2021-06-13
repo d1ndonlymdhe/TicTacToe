@@ -1,0 +1,199 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="public/css/style2.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="first"> 
+<div id="root" class="maincontainer">
+    <div id="title">
+        <div style="font-size:clamp(0px,30vw,120px);">TIC</div>
+        <div style="font-size:clamp(0px,20vw,80px);">TAC</div>
+        <div style="font-size:clamp(0px,15vw,60px);">TOE</div>
+    </div>
+    <div id="inputContainer">
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Code">
+        <button id="join">Join</button>
+        <button id="createRoom">Create</button>
+    </div>
+</div>
+</div>
+<div id="second" class="hidden">
+    
+    <div id="maincontainer" class="maincontainer">
+        <div id="waiting" class="">
+            <p>Waiting for another player</p>
+            <button>EXIT</button>
+        </div>
+       <div id="subcontainer">
+        <div id="code">CODE<br/>0000</div>
+        <div id="clickers" class="" style="z-index: 5;">
+            <div id="0"></div>
+            <div id="1"></div>
+            <div id="2"></div>
+            <div id="3"></div>
+            <div id="4"></div>
+            <div id="5"></div>
+            <div id="6"></div>
+            <div id="7"></div>
+            <div id="8"></div>  
+        </div>
+        
+        <line x1="0%" y1="0%" x2="100%" y2="100%" stroke="white" width="5px"></line>
+        <svg id="board" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" fill="green"/>
+           
+           
+           
+            <g class= "hidden" id="X0">                                            
+                <line x1="7%" y1="7%" x2="30%" y2="30%"></line>   
+                <line x1="7%" y1="30%" x2="30%" y2="7%"></line>
+            </g>
+           <!--(1,2)-->
+            <g class= "hidden" id="X1">
+                <line x1="37%" y1="7%" x2="60%" y2="30%"></line>
+                <line x1="37%" y1="30%" x2="60%" y2="7%"></line>
+            </g>
+           
+           
+           <!--(1,3)-->
+            <g class= "hidden" id="X2">
+                <line x1="67%" y1="7%" x2="90%" y2="30%"></line>
+                <line x1="67%" y1="30%" x2="90%" y2="7%"></line>
+            </g>
+            <!--(2,1)-->
+            <g class= "hidden" id="X3">
+                <line x1="7%" y1="37%" x2="30%" y2="60%"></line>
+                <line x1="7%" y1="60%" x2="30%" y2="37%"></line>
+            </g>
+            <!--(2,2)-->
+            <g class= "hidden" id="X4">
+                <line x1="37%" y1="37%" x2="60%" y2="60%"></line>
+                <line x1="37%" y1="60%" x2="60%" y2="37%"></line>
+            </g>
+    
+            <!--(2,3)-->
+            <g class= "hidden" id="X5">
+                <line x1="67%" y1="37%" x2="90%" y2="60%"></line>
+                <line x1="67%" y1="60%" x2="90%" y2="37%"></line>
+            </g>
+            <!--(3,1)-->
+            <g class= "hidden" id="X6">
+                <line x1="7%" y1="70%" x2="30%" y2="93%"></line>
+                <line x1="7%" y1="93%" x2="30%" y2="70%"></line>
+            </g>
+    
+            <!--(3,2)-->
+            <g class= "hidden" id="X7">
+                <line x1="37%" y1="70%" x2="60%" y2="93%"></line>
+                <line x1="37%" y1="93%" x2="60%" y2="70%"></line>
+            </g>
+            <!--(3,3)-->
+            <g class= "hidden" id="X8">
+                <line x1="70%" y1="70%" x2="93%" y2="93%"></line>
+                <line x1="70%" y1="93%" x2="93%" y2="70%"></line>
+            </g>
+    
+    
+            <!--noughts-->
+            <!--(1,1)-->
+            <g class= "hidden" id="C0">
+                <circle cx="18%" cy="18%" r="12%"></circle>
+            </g>
+            <!--(1,2)-->
+            <g class= "hidden" id="C1">
+                <circle cx="50%" cy="18%" r="12%"></circle>
+            </g>
+            <!--(1,3)-->
+            <g class= "hidden" id="C2">
+                <circle cx="82%" cy="18%" r="12%"></circle>
+            </g>
+            <!--(2,1)-->
+            <g class= "hidden" id="C3">
+                <circle cx="18%" cy="48%" r="12%"></circle>
+            </g>
+            <!--(2,2)-->
+            <g class= "hidden" id="C4">
+                <circle cx="50%" cy="48%" r="12%"></circle>
+            </g>
+            <!--(2,3)-->
+            <g class= "hidden" id="C5">
+                <circle cx="82%" cy="48%" r="12%"></circle>
+            </g>
+            <!--(3,1)-->
+            <g class= "hidden" id="C6">
+                <circle cx="18%" cy="80%" r="12%"></circle>
+            </g>
+            <!--(3,2)-->
+            <g class= "hidden" id="C7">
+                <circle cx="50%" cy="80%" r="12%"></circle>
+            </g>
+            <!--(3,3)-->
+            <g class= "hidden" id="C8">
+                <circle cx="82%" cy="80%" r="12%"></circle>
+            </g>
+            
+    
+            
+            <line x1="33%" y1="5%" x2="33%" y2="95%" stroke="#000000" stroke-width="20px" stroke-linecap="round"  stroke-linejoin="round" />
+            <line x1="66%" y1="5%" x2="66%" y2="95%" stroke="#000000" stroke-width="20px" stroke-linecap="round"  stroke-linejoin="round" />
+            <line x1="5%" y1="33%" x2="95%" y2="33%" stroke="#000000" stroke-width="20px" stroke-linecap="round"  stroke-linejoin="round" />
+            <line x1="5%" y1="66%" x2="95%" y2="66%" stroke="#000000" stroke-width="20px" stroke-linecap="round"  stroke-linejoin="round" />
+        </svg>
+        <div id="players">
+            <div id="host">Player 1</div>
+            <div id="guest">Player 2</div>
+        </div>
+       </div>
+       <div id="third" class="hidden">
+        <div id="main">
+            <div id="result">
+    
+            </div>
+            <div id="actions">
+                <button id="restart">RESTART</button><button id="quit">quit</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+   
+</div>
+<!-- 
+<style>
+    #third{
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+    }
+    #main{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height:100vh;
+        width:clamp(0px,98vw,500px);
+        background-color: #686060;
+        overflow: hidden;
+    }
+</style> -->
+<script src="public/js/handle.js"></script>
+<script src="public/js/index.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+</body>
+</html>
